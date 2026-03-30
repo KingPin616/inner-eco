@@ -1,0 +1,8 @@
+{
+  "name": "inner-eco-root",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "next": "16.2.1"
+  }
+}
