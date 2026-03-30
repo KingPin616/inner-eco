@@ -73,6 +73,10 @@ export async function runtimePlantExists(id: string): Promise<boolean> {
   return runtimePlantList.some((plant) => normalizeId(plant.id) === normalizeId(id));
 }
 
+export async function getRuntimePlants(): Promise<Plant[]> {
+  return readRuntimePlantList();
+}
+
 export async function linkQrToRuntimePlant(id: string, qrCodeUrl: string): Promise<boolean> {
   const runtimePlantList = await readRuntimePlantList();
   const normalizedId = normalizeId(id);

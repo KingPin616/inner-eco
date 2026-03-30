@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getPlantById, type Plant, plantExists } from "@/utils/plants";
+import { type Plant } from "@/utils/plants";
 import { getRuntimePlantById, runtimePlantExists, saveRuntimePlant } from "@/utils/runtimePlants";
 
 function isValidPlantPayload(payload: unknown): payload is Plant {
@@ -60,9 +60,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Missing id query parameter." }, { status: 400 });
   }
 
-  const staticPlant = getPlantById(id);
-  const runtimePlant = staticPlant ? undefined : await getRuntimePlantById(id);
-  const plant = staticPlant ?? runtimePlant;
+  const plant = await getRuntimePlantById(id);
 
   if (!plant) {
     return NextResponse.json({ error: "Plant not found." }, { status: 404 });
@@ -70,6 +68,6 @@ export async function GET(request: NextRequest) {
 
   return NextResponse.json({
     plant,
-    source: plantExists(id) ? "static" : (await runtimePlantExists(id)) ? "runtime" : "unknown",
+    source: (await runtimePlantExists(id)) ? "runtime" : "unknown",
   });
 }

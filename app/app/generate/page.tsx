@@ -1,11 +1,10 @@
 "use client";
 
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import QRCode from "qrcode";
 import Link from "next/link";
 import Image from "next/image";
 import PageShell from "@/components/PageShell";
-import { plantExists } from "@/utils/plants";
 import { getPlantAbsoluteUrl, getPlantPath } from "@/utils/qr";
 
 type FormState = {
@@ -92,13 +91,6 @@ export default function GeneratePage() {
       isActive = false;
     };
   }, []);
-
-  const duplicateId = useMemo(() => {
-    if (!formState.id.trim()) {
-      return false;
-    }
-    return plantExists(formState.id.trim());
-  }, [formState.id]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -274,12 +266,6 @@ export default function GeneratePage() {
           >
             Generate QR
           </button>
-
-          {duplicateId ? (
-            <p className="rounded-xl border border-amber-900/25 bg-amber-50 px-3 py-2 text-xs font-semibold text-amber-900">
-              Warning: this ID already exists in static data.
-            </p>
-          ) : null}
 
           {error ? (
             <p className="rounded-xl border border-rose-900/20 bg-rose-50 px-3 py-2 text-xs font-semibold text-rose-900">

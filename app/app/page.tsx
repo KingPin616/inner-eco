@@ -1,10 +1,10 @@
 import Link from "next/link";
 import PageShell from "@/components/PageShell";
 import PlantCard from "@/components/PlantCard";
-import { getPlants } from "@/utils/plants";
+import { getRuntimePlants } from "@/utils/runtimePlants";
 
-export default function Home() {
-  const plants = getPlants();
+export default async function Home() {
+  const plants = await getRuntimePlants();
 
   return (
     <PageShell>
