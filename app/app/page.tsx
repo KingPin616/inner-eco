@@ -1,4 +1,3 @@
-import Link from "next/link";
 import PageShell from "@/components/PageShell";
 import PlantCard from "@/components/PlantCard";
 import { getRuntimePlants } from "@/utils/runtimePlants";
@@ -20,12 +19,6 @@ export default async function Home() {
         <p className="max-w-lg text-sm leading-relaxed text-emerald-900/80 sm:text-base">
           Each tagged tree opens an instant profile with age, scientific details, and a short description.
         </p>
-        <Link
-          href="/generate"
-          className="inline-flex rounded-full bg-emerald-900 px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-emerald-50 transition hover:bg-emerald-950"
-        >
-          Open QR Generator
-        </Link>
       </section>
 
       <section className="mt-6 grid gap-4 sm:grid-cols-2">
