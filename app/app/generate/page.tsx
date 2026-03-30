@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import QRCode from "qrcode";
 import Link from "next/link";
 import Image from "next/image";
@@ -17,6 +17,11 @@ type FormState = {
   imageUrl: string;
 };
 
+type ImageOption = {
+  fileName: string;
+  path: string;
+};
+
 const initialState: FormState = {
   id: "",
   commonName: "",
@@ -30,7 +35,63 @@ export default function GeneratePage() {
   const [formState, setFormState] = useState<FormState>(initialState);
   const [qrImageData, setQrImageData] = useState("");
   const [targetUrl, setTargetUrl] = useState("");
+  const [savedQrPath, setSavedQrPath] = useState("");
+  const [saveQrError, setSaveQrError] = useState("");
   const [error, setError] = useState("");
+  const [imageOptions, setImageOptions] = useState<ImageOption[]>([]);
+  const [isLoadingImages, setIsLoadingImages] = useState(true);
+  const [imageLoadError, setImageLoadError] = useState("");
+
+  useEffect(() => {
+    let isActive = true;
+
+    async function loadImages() {
+      try {
+        setImageLoadError("");
+        setIsLoadingImages(true);
+
+        const response = await fetch("/api/images", { cache: "no-store" });
+
+        if (!response.ok) {
+          throw new Error("Image directory could not be loaded.");
+        }
+
+        const data = (await response.json()) as { images?: ImageOption[] };
+        const images = Array.isArray(data.images) ? data.images : [];
+
+        if (!isActive) {
+          return;
+        }
+
+        setImageOptions(images);
+        setFormState((prev) => {
+          if (prev.imageUrl) {
+            return prev;
+          }
+
+          const firstImagePath = images[0]?.path ?? "";
+          return { ...prev, imageUrl: firstImagePath };
+        });
+      } catch {
+        if (!isActive) {
+          return;
+        }
+
+        setImageOptions([]);
+        setImageLoadError("Could not load images from public/image.");
+      } finally {
+        if (isActive) {
+          setIsLoadingImages(false);
+        }
+      }
+    }
+
+    loadImages();
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
 
   const duplicateId = useMemo(() => {
     if (!formState.id.trim()) {
@@ -41,13 +102,17 @@ export default function GeneratePage() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
     setError("");
+    setSaveQrError("");
+    setSavedQrPath("");
 
     const trimmedId = formState.id.trim();
 
     if (!trimmedId) {
       setError("Plant ID is required to generate a QR code.");
       setQrImageData("");
+      setTargetUrl("");
       return;
     }
 
@@ -65,9 +130,31 @@ export default function GeneratePage() {
 
       setTargetUrl(absoluteUrl);
       setQrImageData(dataUrl);
+
+      const saveResponse = await fetch("/api/qr", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: trimmedId,
+          qrDataUrl: dataUrl,
+        }),
+      });
+
+      if (!saveResponse.ok) {
+        setSaveQrError("QR generated, but saving to public/qr failed.");
+        return;
+      }
+
+      const savePayload = (await saveResponse.json()) as { path?: string };
+      if (savePayload.path) {
+        setSavedQrPath(savePayload.path);
+      }
     } catch {
       setError("Could not generate QR code. Please verify the provided values.");
       setQrImageData("");
+      setTargetUrl("");
     }
   }
 
@@ -154,17 +241,31 @@ export default function GeneratePage() {
           />
 
           <label className="block text-sm font-semibold text-emerald-900" htmlFor="image-url">
-            Image URL
+            Plant Image
           </label>
-          <input
+          <select
             id="image-url"
-            type="url"
             value={formState.imageUrl}
             onChange={(event) =>
               setFormState((prev) => ({ ...prev, imageUrl: event.target.value }))
             }
-            className="w-full rounded-xl border border-emerald-900/20 bg-emerald-50/50 px-3 py-2 text-sm outline-none transition focus:border-emerald-700"
-          />
+            disabled={isLoadingImages || imageOptions.length === 0}
+            className="w-full rounded-xl border border-emerald-900/20 bg-emerald-50/50 px-3 py-2 text-sm outline-none transition focus:border-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            <option value="">
+              {isLoadingImages ? "Loading images..." : "Select an image from public/image"}
+            </option>
+            {imageOptions.map((option) => (
+              <option key={option.path} value={option.path}>
+                {option.fileName}
+              </option>
+            ))}
+          </select>
+          {imageLoadError ? (
+            <p className="rounded-xl border border-rose-900/20 bg-rose-50 px-3 py-2 text-xs font-semibold text-rose-900">
+              {imageLoadError}
+            </p>
+          ) : null}
 
           <button
             type="submit"
@@ -212,7 +313,25 @@ export default function GeneratePage() {
               >
                 Download QR
               </a>
+              {savedQrPath ? (
+                <a
+                  href={savedQrPath}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex rounded-full border border-emerald-900/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-emerald-900 transition hover:bg-emerald-900 hover:text-white"
+                >
+                  Open Saved QR
+                </a>
+              ) : null}
               <p className="text-xs break-all text-emerald-900/75">{targetUrl}</p>
+              {savedQrPath ? (
+                <p className="text-xs break-all text-emerald-900/75">Saved at: {savedQrPath}</p>
+              ) : null}
+              {saveQrError ? (
+                <p className="rounded-xl border border-amber-900/25 bg-amber-50 px-3 py-2 text-xs font-semibold text-amber-900">
+                  {saveQrError}
+                </p>
+              ) : null}
             </div>
           ) : (
             <div className="rounded-2xl border border-dashed border-emerald-900/20 bg-emerald-50/55 p-8 text-center text-sm text-emerald-900/70">

@@ -9,6 +9,7 @@ export type Plant = {
   age: string;
   description: string;
   imageUrl: string;
+  qrCodeUrl?: string;
 };
 
 const plantList = plants as Plant[];

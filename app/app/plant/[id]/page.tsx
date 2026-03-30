@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import PageShell from "@/components/PageShell";
 import PlantMetaRow from "@/components/PlantMetaRow";
 import { getPlantById } from "@/utils/plants";
+import { getRuntimePlantById } from "@/utils/runtimePlants";
 
 type PlantPageProps = {
   params: Promise<{ id: string }>;
@@ -11,11 +11,20 @@ type PlantPageProps = {
 
 export default async function PlantPage({ params }: PlantPageProps) {
   const { id } = await params;
-  const plant = getPlantById(id);
-
-  if (!plant) {
-    notFound();
-  }
+  const runtimePlant = await getRuntimePlantById(id);
+  const plant =
+    getPlantById(id) ??
+    runtimePlant ?? {
+      id,
+      name: {
+        common: id.replaceAll("-", " "),
+        scientific: "Unknown species",
+      },
+      age: "Unknown age",
+      description:
+        "This plant ID does not exist in static data yet. Create it from the QR Builder to save full details.",
+      imageUrl: "/image/oak-001.svg",
+    };
 
   return (
     <PageShell>
@@ -42,6 +51,12 @@ export default async function PlantPage({ params }: PlantPageProps) {
         </div>
 
         <div className="space-y-6 p-5 sm:p-7">
+          {plant.name.scientific === "Unknown species" ? (
+            <p className="rounded-xl border border-amber-900/25 bg-amber-50 px-3 py-2 text-xs font-semibold text-amber-900">
+              Showing temporary profile for unknown plant ID.
+            </p>
+          ) : null}
+
           <div className="space-y-1">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-800/80">Plant Profile</p>
             <h1 data-testid="plant-name" className="text-4xl font-display leading-[0.92] text-emerald-950 sm:text-5xl">

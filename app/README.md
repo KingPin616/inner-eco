@@ -77,9 +77,11 @@ Edit `data/plants.json` and keep this schema for each plant:
 	},
 	"age": "42 years",
 	"description": "...",
-	"imageUrl": "https://..."
+	"imageUrl": "/image/my-photo.jpg"
 }
 ```
+
+Store image files in `public/image`. The QR generator now reads this folder and lets you pick an image from a dropdown instead of typing a URL.
 
 ## QR Generator Workflow
 
@@ -87,7 +89,8 @@ Edit `data/plants.json` and keep this schema for each plant:
 2. Enter a plant ID and optional descriptive fields.
 3. Click **Generate QR**.
 4. Download PNG with **Download QR**.
-5. The QR target points to `/plant/[id]` and can be printed for physical signage.
+5. Generated QR files are also saved to `public/qr` and can be opened from the preview panel.
+6. The QR target points to `/plant/[id]` and can be printed for physical signage.
 
 ## Testing with Included Toolkit
 

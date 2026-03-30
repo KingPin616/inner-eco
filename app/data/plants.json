@@ -7,7 +7,7 @@
     },
     "age": "42 years",
     "description": "A long-lived native oak that supports hundreds of insect species and provides dense summer shade.",
-    "imageUrl": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=80"
+    "imageUrl": "/image/oak-001.svg"
   },
   {
     "id": "maple-014",
@@ -17,7 +17,7 @@
     },
     "age": "28 years",
     "description": "Known for bright autumn foliage and sweet sap, this maple thrives in temperate forest edges.",
-    "imageUrl": "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1200&q=80"
+    "imageUrl": "/image/maple-014.svg"
   },
   {
     "id": "fern-009",
@@ -27,7 +27,7 @@
     },
     "age": "6 years",
     "description": "A lush fern with arching fronds that prefers filtered light and consistently moist soil.",
-    "imageUrl": "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1200&q=80"
+    "imageUrl": "/image/fern-009.svg"
   },
   {
     "id": "cedar-021",
@@ -37,6 +37,6 @@
     },
     "age": "35 years",
     "description": "An evergreen conifer with elegant layered branches and a resilient canopy structure.",
-    "imageUrl": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80"
+    "imageUrl": "/image/cedar-021.svg"
   }
 ]

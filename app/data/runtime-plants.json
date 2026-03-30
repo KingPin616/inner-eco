@@ -1,0 +1,244 @@
+[
+  {
+    "id": "DR-BHM-1000017456",
+    "name": {
+      "common": "Dawn Redwood",
+      "scientific": "Metasequoia glyptostroboides"
+    },
+    "age": "Approximately 50–70 years.",
+    "description": "A \"living fossil\" and unique deciduous conifer. Unlike most cone-bearing trees, the Dawn Redwood sheds its soft, feathery needles every autumn after they turn a brilliant copper or gold. It features a distinctive tapering trunk with reddish-brown, stringy bark and \"armpit\" depressions (armpit-like hollows) beneath where the branches meet the trunk. It is fast-growing and thrives in the moist, temperate climate near the lake.",
+    "imageUrl": "/image/Dawn%20Redwood.jpeg",
+    "qrCodeUrl": "/qr/DR-BHM-1000017456-qr.png"
+  },
+  {
+    "id": "SAL-BHM-001",
+    "name": {
+      "common": "Indian Willow (or Bodhi Tree in local contexts)",
+      "scientific": "Salix tetrasperma"
+    },
+    "age": "30–40 years",
+    "description": "A medium-sized deciduous tree found near riverbanks and lakes in the Himalayas. It features long, lance-shaped leaves with a silvery underside. In Kumaoni culture, its wood is often used for making light furniture and cricket bats.",
+    "imageUrl": "/image/indian%20willow.jpg",
+    "qrCodeUrl": "/qr/SAL-BHM-001-qr.png"
+  },
+  {
+    "id": "MYR-BHM-002",
+    "name": {
+      "common": "Kafal (Bayberry)",
+      "scientific": "Myrica esculenta"
+    },
+    "age": "40–50 years",
+    "description": "The state fruit of Uttarakhand. This evergreen tree produces small, red, berry-like fruits that are highly prized for their sweet and sour taste. It is famous in local folklore and serves as a vital source of income for mountain communities during the summer.",
+    "imageUrl": "/image/kafal%20tree.jpg",
+    "qrCodeUrl": "/qr/MYR-BHM-002-qr.png"
+  },
+  {
+    "id": "JUG-BHM-003",
+    "name": {
+      "common": "Walnut (Akhrot)",
+      "scientific": "Juglans regia"
+    },
+    "age": "20–30 years (Younger specimen)",
+    "description": "A large deciduous tree known for its high-quality timber and nutritious nuts. The leaves are compound and aromatic. These trees are highly valued in the Bhimtal region for both their ecological benefit and their valuable harvest.",
+    "imageUrl": "/image/walnut%20tree.jpg",
+    "qrCodeUrl": "/qr/JUG-BHM-003-qr.png"
+  },
+  {
+    "id": "JUG-BHM-004",
+    "name": {
+      "common": "Walnut (Akhrot)",
+      "scientific": "Juglans regia"
+    },
+    "age": "20–30 years (Younger specimen)",
+    "description": "A large deciduous tree known for its high-quality timber and nutritious nuts. The leaves are compound and aromatic. These trees are highly valued in the Bhimtal region for both their ecological benefit and their valuable harvest.",
+    "imageUrl": "/image/walnut%20tree%20(2).jpg",
+    "qrCodeUrl": "/qr/JUG-BHM-004-qr.png"
+  },
+  {
+    "id": "JUG-BHM-005",
+    "name": {
+      "common": "Walnut (Akhrot)",
+      "scientific": "Juglans regia"
+    },
+    "age": "20–30 years (Younger specimen)",
+    "description": "A large deciduous tree known for its high-quality timber and nutritious nuts. The leaves are compound and aromatic. These trees are highly valued in the Bhimtal region for both their ecological benefit and their valuable harvest.",
+    "imageUrl": "/image/walnut%20tree%20(3).jpg",
+    "qrCodeUrl": "/qr/JUG-BHM-005-qr.png"
+  },
+  {
+    "id": "PRU-BHM-004",
+    "name": {
+      "common": "Peach (Aadoo)",
+      "scientific": "Prunus persica"
+    },
+    "age": "8–12 years",
+    "description": "A small, fast-growing fruit tree. You can see the characteristic pink blossoms starting to emerge in your photo. Peaches from the Kumaon hills are famous for their sweetness due to the high altitude and clean air.",
+    "imageUrl": "/image/peach%20tree.jpg",
+    "qrCodeUrl": "/qr/PRU-BHM-004-qr.png"
+  },
+  {
+    "id": "ACT-BHM-005",
+    "name": {
+      "common": "Kiwi Fruit",
+      "scientific": "Actinidia deliciosa"
+    },
+    "age": "15–20 years",
+    "description": "Technically a woody vine (liana), not a standalone tree. It requires the T-bar support structures seen in your photo. Kiwi cultivation has become very popular in Bhimtal recently as it thrives in the temperate climate and well-drained soil.",
+    "imageUrl": "/image/kiwi%20fruit%20tree.jpg",
+    "qrCodeUrl": "/qr/ACT-BHM-005-qr.png"
+  },
+  {
+    "id": "CAL-BHM-006",
+    "name": {
+      "common": "Weeping Bottlebrush",
+      "scientific": "Callistemon viminalis"
+    },
+    "age": "25–35 years",
+    "description": "Named for its distinct drooping branches and bright red, cylindrical flowers that look exactly like bottle cleaners. It is an ornamental favorite in hill stations because it attracts sunbirds and bees.",
+    "imageUrl": "/image/weeping%20bottlebrush%20tree.jpg",
+    "qrCodeUrl": "/qr/CAL-BHM-006-qr.png"
+  },
+  {
+    "id": "MOR-BHM-007",
+    "name": {
+      "common": "Mulberry (Shahtoot)",
+      "scientific": "Morus alba"
+    },
+    "age": "35–45 years",
+    "description": "A hardy, broad-leafed tree. Its leaves are the primary food source for silkworms, and it produces sweet, elongated berries. This specimen provides excellent shade on the BIAS campus grounds.",
+    "imageUrl": "/image/mulberry%20tree.jpg",
+    "qrCodeUrl": "/qr/MOR-BHM-007-qr.png"
+  },
+  {
+    "id": "ANT-BHM-008",
+    "name": {
+      "common": "Snapdragon / Dog Flower",
+      "scientific": "Antirrhinum majus"
+    },
+    "age": "Seasonal (Annual)",
+    "description": "A popular garden flower known for its \"dragon\" shaped blooms that \"snap\" open when the sides are squeezed. The bi-color pink and white varieties in your photo are classic cold-weather ornamentals that thrive in the Himalayan spring.",
+    "imageUrl": "/image/antirrhinum%20flower%20majus.jpg",
+    "qrCodeUrl": "/qr/ANT-BHM-008-qr.png"
+  },
+  {
+    "id": "TAX-BHM-009",
+    "name": {
+      "common": "Montezuma Cypress",
+      "scientific": "Taxodium mucronatum"
+    },
+    "age": "60–80 years",
+    "description": "Often confused with the Dawn Redwood, this massive tree is native to Mexico but grows exceptionally well in Bhimtal. It is known for its incredible longevity and trunk girth. Unlike the Dawn Redwood, it is often semi-evergreen in milder climates.",
+    "imageUrl": "/image/montezuma%20cypress%20tree.jpg",
+    "qrCodeUrl": "/qr/TAX-BHM-009-qr.png"
+  },
+  {
+    "id": "TAX-BHM-010",
+    "name": {
+      "common": "Montezuma Cypress",
+      "scientific": "Taxodium mucronatum"
+    },
+    "age": "60–80 years",
+    "description": "Often confused with the Dawn Redwood, this massive tree is native to Mexico but grows exceptionally well in Bhimtal. It is known for its incredible longevity and trunk girth. Unlike the Dawn Redwood, it is often semi-evergreen in milder climates.",
+    "imageUrl": "/image/montezumacypress%20tree%20(2).jpg",
+    "qrCodeUrl": "/qr/TAX-BHM-010-qr.png"
+  },
+  {
+    "id": "SAL-BHM-010",
+    "name": {
+      "common": "Black Willow",
+      "scientific": "Salix nigra (or related Salix species)"
+    },
+    "age": "30–45 years",
+    "description": "Distinct from the Indian Willow by its darker, more deeply furrowed bark and more spreading canopy. These trees are excellent for soil stabilization on the hilly slopes of the campus.",
+    "imageUrl": "/image/black%20willow%20tree.jpg",
+    "qrCodeUrl": "/qr/SAL-BHM-010-qr.png"
+  },
+  {
+    "id": "SAL-BHM-011",
+    "name": {
+      "common": "Black Willow",
+      "scientific": "Salix nigra (or related Salix species)"
+    },
+    "age": "30–45 years",
+    "description": "Distinct from the Indian Willow by its darker, more deeply furrowed bark and more spreading canopy. These trees are excellent for soil stabilization on the hilly slopes of the campus.",
+    "imageUrl": "/image/willow%20tree%20(2).jpg",
+    "qrCodeUrl": "/qr/SAL-BHM-011-qr.png"
+  },
+  {
+    "id": "SAL-BHM-012",
+    "name": {
+      "common": "Black Willow",
+      "scientific": "Salix nigra (or related Salix species)"
+    },
+    "age": "30–45 years",
+    "description": "Distinct from the Indian Willow by its darker, more deeply furrowed bark and more spreading canopy. These trees are excellent for soil stabilization on the hilly slopes of the campus.",
+    "imageUrl": "/image/willow%20tree%20(3).jpg",
+    "qrCodeUrl": "/qr/SAL-BHM-012-qr.png"
+  },
+  {
+    "id": "CAM-BHM-011",
+    "name": {
+      "common": "Tea",
+      "scientific": "Camellia sinensis"
+    },
+    "age": "10–15 years (Regularly pruned)",
+    "description": "These are the same plants used to produce black, green, and oolong tea. The Kumaon region has a long history of tea cultivation (dating back to the 1830s). These small, hardy shrubs have glossy dark green leaves.",
+    "imageUrl": "/image/tea%20plants.jpg",
+    "qrCodeUrl": "/qr/CAM-BHM-011-qr.png"
+  },
+  {
+    "id": "VIT-BHM-012",
+    "name": {
+      "common": "Five-Leaved Chaste Tree / Nirgundi",
+      "scientific": "Vitex negundo"
+    },
+    "age": "3–5 years (Young shrub)",
+    "description": "A powerful medicinal shrub widely used in Ayurveda. It is easily identified by its \"palmate\" leaves (arranged like fingers on a hand). It is used locally to treat anti-inflammatory conditions and as a natural pest repellent for stored grains.",
+    "imageUrl": "/image/nirgundi.jpg",
+    "qrCodeUrl": "/qr/VIT-BHM-012-qr.png"
+  },
+  {
+    "id": "JUG-BHM-013",
+    "name": {
+      "common": "Walnut / Akhrot",
+      "scientific": "Juglans regia"
+    },
+    "age": "35–50 years",
+    "description": "This is a more established specimen than the previous one. In this photo, you can see the \"catkins\" (drooping flower clusters) hanging from the branches, which is a sign of a healthy, producing tree.",
+    "imageUrl": "/image/walnut%20tree%20(3).jpg",
+    "qrCodeUrl": "/qr/JUG-BHM-013-qr.png"
+  },
+  {
+    "id": "CAL-BHM-014",
+    "name": {
+      "common": "Crimson Bottlebrush",
+      "scientific": "Callistemon citrinus"
+    },
+    "age": "30–40 years",
+    "description": "While similar to the \"Weeping\" variety, this tree has a more upright, bushy habit. The leaves have a mild lemony scent when crushed. It is extremely drought-tolerant once established.",
+    "imageUrl": "/image/bottlebrush%20tree.jpg",
+    "qrCodeUrl": "/qr/CAL-BHM-014-qr.png"
+  },
+  {
+    "id": "PUN-BHM-015",
+    "name": {
+      "common": "Wild Pomegranate / Darim",
+      "scientific": "Punica granatum var. spicatum"
+    },
+    "age": "12–18 years",
+    "description": "Unlike the cultivated pomegranate, the \"Darim\" is a thorny, deciduous shrub or small tree native to the Himalayan foothills. Its fruit is smaller and very acidic, making it a primary ingredient for Anardana (dried pomegranate seeds) used in Indian spices. It is highly resilient and handles the rocky soil of the Kumaon region with ease.",
+    "imageUrl": "/image/wild%20pomegranate%20tree.jpg",
+    "qrCodeUrl": "/qr/PUN-BHM-015-qr.png"
+  },
+  {
+    "id": "ACA-BHM-016",
+    "name": {
+      "common": "Phulai",
+      "scientific": "Acacia modesta"
+    },
+    "age": "20–30 years",
+    "description": "A hardy, thorny tree known for its delicate, feathery foliage and pale yellow flower spikes. It is a slow-growing species that is incredibly drought-resistant. In the Himalayan region, it is valued for its strong wood and is a significant source of high-quality honey (Phulai honey) due to its nectar-rich blossoms.",
+    "imageUrl": "/image/phulai%20tree.jpg",
+    "qrCodeUrl": "/qr/ACA-BHM-016-qr.png"
+  }
+]
