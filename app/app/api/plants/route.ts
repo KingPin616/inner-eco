@@ -20,6 +20,16 @@ function isValidPlantPayload(payload: unknown): payload is Plant {
 }
 
 export async function POST(request: NextRequest) {
+  if (process.env.VERCEL === "1") {
+    return NextResponse.json(
+      {
+        error:
+          "This deployment is read-only on Vercel. Plant changes cannot be saved here. Add or update plants in your source data and redeploy.",
+      },
+      { status: 503 },
+    );
+  }
+
   try {
     const payload = (await request.json()) as unknown;
 

@@ -135,7 +135,8 @@ export default function GeneratePage() {
       });
 
       if (!saveResponse.ok) {
-        setSaveQrError("QR generated, but saving to public/qr failed.");
+        const errorPayload = (await saveResponse.json().catch(() => null)) as { error?: string } | null;
+        setSaveQrError(errorPayload?.error ?? "QR generated, but saving to public/qr failed.");
         return;
       }
 

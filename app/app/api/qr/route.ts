@@ -7,6 +7,16 @@ function sanitizeId(id: string): string {
 }
 
 export async function POST(request: NextRequest) {
+  if (process.env.VERCEL === "1") {
+    return NextResponse.json(
+      {
+        error:
+          "This deployment is read-only on Vercel. QR files cannot be persisted here. Generate/download locally if you need saved PNG files.",
+      },
+      { status: 503 },
+    );
+  }
+
   try {
     const body = (await request.json()) as { id?: string; qrDataUrl?: string };
     const id = typeof body.id === "string" ? body.id : "";
